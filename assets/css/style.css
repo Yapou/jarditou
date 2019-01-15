@@ -1,0 +1,94 @@
+/* Container */
+
+div.container-fluid {
+    background-color: #FFFFFF;
+    color : black;
+
+}
+
+#topnavbar {background-color : #0E5159;}
+
+img.img-banner {
+    width: 100%;
+    height: auto;
+
+}
+
+
+aside {
+    border: solid 1px black;
+    border-radius: 15px;
+    background: #0E5159;
+
+
+}
+
+.footer {
+    background-color : #0E5159 ;
+
+}
+
+/* Aside bloc */
+.bloc1 {
+
+    background-color: #1E2D4F;
+}
+
+.bloc2 {
+    background-color: #007CAB;
+}
+
+.bloc3 {
+    background-color: #1E2D4F;
+}
+
+
+div.network_content {
+    border-radius : 15px;
+    margin-bottom: 10px
+}
+
+div.network ul {
+    list-style : none;
+    margin: 0;
+    padding: 0;
+}
+
+p.text-light {
+    width: 100%;
+    font-size: 60%;
+
+}
+
+p.message_rs {
+    color:#adafb1;
+    margin-top: 30px;
+    font-size: 130%;
+}
+
+/* Link */
+
+a {color: #adafb1 ;}
+a:hover{color: red;}
+
+
+/* images rs */
+img.network {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* Morph */
+div.network div.effet img.network {
+    -webkit-filter: grayscale(0) blur(0px);
+    filter: grayscale(0) blur(0px);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+div.network  div.effet:hover img.network {
+    -webkit-transform: rotate(360deg); /* rotation de l'image */
+    transform: rotate(360deg);
+}
