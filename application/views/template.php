@@ -27,7 +27,7 @@
 <?= (current_url() == site_url('home/accueil')) ? 'jardinage, outils, plantes, jardin, semis, brouettes' : '' ?>
 <?= (current_url() == site_url('produits/liste')) ? 'jardin, jardinage, barbecue, pelle, scie, hache, lamelle de terasse, parasol, pot de fleur, sécateur, tondeuse' : '' ?>
 <?= (current_url() == site_url('connexion/formco')) ? 'connexion, login, mot de passe, jardin, jardinage' : '' ?>
-<?= (current_url() == site_url('inscription/renseignements')) ? 'inscription, espace membre, nous rejoindre, pseudo, jardin, jardinage ' : '' ?>
+<?= (current_url() == site_url('inscription/renseignements')) ? 'inscription, espace membre, nous rejoindre, pseudo, jardin, jardinage ' : '' //changement url?>
 ">
 <meta name="robots" content="index, follow">
 
