@@ -26,7 +26,7 @@
     <p class="text-center"> Vous êtes connecté</p>
 
     <div class="text-center mb-3">
-        <a href= " <?= site_url('connexion/deconnexion') ?> " name="btnDeco" class="btn btn-danger">Se deconnecter</a>
+      
     </div>
 
     <?php

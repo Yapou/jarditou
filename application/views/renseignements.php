@@ -1,4 +1,3 @@
-
 <div class="center">
           <?php echo form_open();
           echo validation_errors(); ?>

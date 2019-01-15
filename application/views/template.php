@@ -5,31 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>
 
-        <?= (current_url() == site_url('home')) ? '' : '' ?>
-        <?= (current_url() == site_url('produits/liste')) ? 'Liste de nos produits - ' : '' ?>
-        <?= (current_url() == site_url('connexion/formco')) ? 'Connexion au compte - ' : '' ?>
-        <?= (current_url() == site_url('inscription/renseignements')) ? 'Créer un compte - ' : '' ?>
-         Jarditou : Jardinerie en ligne
+    <?= (current_url() == site_url('home')) ? '' : '' ?>
+    <?= (current_url() == site_url('produits/liste')) ? 'Liste de nos produits - ' : '' ?>
+    <?= (current_url() == site_url('connexion/formco')) ? 'Connexion au compte - ' : '' ?>
+    <?= (current_url() == site_url('inscription/renseignements')) ? 'Créer un compte - ' : '' ?>
+    Jarditou : Jardinerie en ligne
   </title>
   <!--Charge le texte en fonction de l'url-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href=" <?= base_url('assets/css/style.css') ?>">
   <!-- bootstrap -->
 
-<!--pourle referencement-->
+  <!--pourle referencement-->
   <meta name='description' content="
   <?= (current_url() == site_url('home/accueil')) ? 'Jarditou propose des articles de jardinage en ligne' : '' ?>
   <?= (current_url() == site_url('produits/liste')) ? 'Liste des produits vendus dans nos boutiques de jardinage jarditou' : '' ?>
   <?= (current_url() == site_url('connexion/formco')) ? 'Page de connexion au compte client de notre boutique de jardinage en ligne jarditou' : '' ?>
   <?= (current_url() == site_url('inscription/renseignements')) ? 'Page d\'inscription à notre boutique en ligne de jardinage jarditou' : '' ?>
-">
-<meta name="keywords" content="
-<?= (current_url() == site_url('home/accueil')) ? 'jardinage, outils, plantes, jardin, semis, brouettes' : '' ?>
-<?= (current_url() == site_url('produits/liste')) ? 'jardin, jardinage, barbecue, pelle, scie, hache, lamelle de terasse, parasol, pot de fleur, sécateur, tondeuse' : '' ?>
-<?= (current_url() == site_url('connexion/formco')) ? 'connexion, login, mot de passe, jardin, jardinage' : '' ?>
-<?= (current_url() == site_url('inscription/renseignements')) ? 'inscription, espace membre, nous rejoindre, pseudo, jardin, jardinage ' : '' //changement url?>
-">
-<meta name="robots" content="index, follow">
+  ">
+  <meta name="keywords" content="
+  <?= (current_url() == site_url('home/accueil')) ? 'jardinage, outils, plantes, jardin, semis, brouettes' : '' ?>
+  <?= (current_url() == site_url('produits/liste')) ? 'jardin, jardinage, barbecue, pelle, scie, hache, lamelle de terasse, parasol, pot de fleur, sécateur, tondeuse' : '' ?>
+  <?= (current_url() == site_url('connexion/formco')) ? 'connexion, login, mot de passe, jardin, jardinage' : '' ?>
+  <?= (current_url() == site_url('inscription/renseignements')) ? 'inscription, espace membre, nous rejoindre, pseudo, jardin, jardinage ' : '' //changement url?>
+  ">
+  <meta name="robots" content="index, follow">
 
 
 
@@ -43,16 +43,25 @@
     </header>
 
     <nav class="navbar navbar-expand-md navbar-light justify-content-end  sticky-top" id="topnavbar">
-       <img class="img img-responsive col-1 mt-2 img-logo" src="<?= base_url('assets/img/jarditou_logo.png') ?>" alt="logo jarditou" description="logo du site jarditou">
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbtn" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a href= " <?= site_url('home/accueil') ?> "><img class="img  mt-2 img-logo" src="<?= base_url('assets/img/jarditou_logo.png') ?>" alt="logo jarditou" description="logo du site jarditou"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbtn" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbtn">
         <ul class="nav ml-auto ">
           <li class="nav-item"><a class="nav-link" href=" <?= site_url('home/accueil') ?> ">Accueil</a></li>
           <li class="nav-item"><a class="nav-link" href="<?= site_url('produits/liste') ?>">Produits</a></li>
-          <li class="nav-item"><a class="nav-link" href=" <?= site_url('connexion/formco') ?>">Connexion</a></li>
-          <li class="nav-item"><a class="nav-link" href=" <?= site_url('inscription/renseignements') ?> ">Nous rejoindre</a></li>
+
+          <!-- Si l'utilisateur est connecté -->
+          <?php if (empty($this->session->login)) { ?>
+            <li  class="nav-item change"><a class="nav-link" href=" <?= site_url('connexion/formco') ?>">Connexion</a></li>
+            <li class="nav-item"><a class="nav-link" href=" <?= site_url('inscription/renseignements') ?> ">Nous rejoindre</a></li>
+
+          <?php } ?>
+
+          <?php if (isset($this->session->login)) { ?>
+            <a href= " <?= site_url('connexion/deconnexion') ?> " name="btnDeco" > <img id="boutonCo" src="<?= base_url('assets/img/boutonco.png')?>" alt="boutonconnexion"> </a>
+          <?php } ?>
         </ul>
       </div>
     </nav>
@@ -72,21 +81,21 @@
 
     </div>
   </div>
-    <!-- Permet de charger le contenu-->
-    <?= $page ?>
+  <!-- Permet de charger le contenu-->
+  <?= $page ?>
 
-    <footer class="footer ">
-      <div class="container">
+  <footer class="footer ">
+    <div class="container">
 
-        <ul class="nav navbar navbar-expand navbar-dark d-md-flex justify-content-center">
-          <li class="nav-item"> <a class="nav-link" href="#"> mentions légales</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#"> plan du site</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#"> horaires</a></li>
-        </ul>
+      <ul class="nav navbar navbar-expand navbar-dark d-md-flex justify-content-center">
+        <li class="nav-item"> <a class="nav-link" href="#"> mentions légales</a></li>
+        <li class="nav-item"> <a class="nav-link" href="#"> plan du site</a></li>
+        <li class="nav-item"> <a class="nav-link" href="#"> horaires</a></li>
+      </ul>
 
-      </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
 
 
