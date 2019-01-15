@@ -122,7 +122,35 @@
                           <p>Date d'ajout : <?= date("d.m.y") ?></p>
                           <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                              <button type="submit" class="btn btn-success">Envoyer</button>
+
+
+
+                              <!-- Button trigger modal confirmation -->
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                Valider
+                              </button>
+
+                              <!-- Modal -->
+                              <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Confirmer ?</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      Continuer ?
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
+                                      <button type="submit" class="btn btn-primary">Oui</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
 
                           </div>
                           <!--Fin du Formulaire d'ajout-->
